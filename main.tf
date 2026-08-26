@@ -31,3 +31,4 @@ resource "azurerm_resource_group" "multiple" {
   name     = each.value
   location = "Central India"
 }
+# Git branch practice
