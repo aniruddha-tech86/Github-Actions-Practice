@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main
-      workflow_dispatch
+  workflow_dispatch:
 
 permissions:
   id-token: write
@@ -15,8 +15,8 @@ permissions:
 
 jobs:
   terraform:
-  environment: production
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
       - name: Checkout
@@ -37,6 +37,6 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan
-        - name: Terraform Apply
-          run: terraform apply
-          -auto-approve
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
